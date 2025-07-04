@@ -2,12 +2,12 @@
 import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { 
-  calendar, 
-  users, 
-  settings, 
-  user, 
-  file-text,
-  log-out 
+  Calendar, 
+  Users, 
+  Settings, 
+  User, 
+  FileText,
+  LogOut 
 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
@@ -15,30 +15,30 @@ import { cn } from '@/lib/utils';
 
 const menuItems = {
   admin: [
-    { title: 'Dashboard', url: '/dashboard', icon: 'calendar' },
-    { title: 'Agendamentos', url: '/appointments', icon: 'calendar' },
-    { title: 'Clientes', url: '/clients', icon: 'users' },
-    { title: 'Funcionários', url: '/employees', icon: 'user' },
-    { title: 'Relatórios', url: '/reports', icon: 'file-text' },
-    { title: 'Configurações', url: '/settings', icon: 'settings' },
+    { title: 'Dashboard', url: '/dashboard', icon: 'Calendar' },
+    { title: 'Agendamentos', url: '/appointments', icon: 'Calendar' },
+    { title: 'Clientes', url: '/clients', icon: 'Users' },
+    { title: 'Funcionários', url: '/employees', icon: 'User' },
+    { title: 'Relatórios', url: '/reports', icon: 'FileText' },
+    { title: 'Configurações', url: '/settings', icon: 'Settings' },
   ],
   employee: [
-    { title: 'Meus Agendamentos', url: '/my-appointments', icon: 'calendar' },
-    { title: 'Clientes', url: '/clients', icon: 'users' },
+    { title: 'Meus Agendamentos', url: '/my-appointments', icon: 'Calendar' },
+    { title: 'Clientes', url: '/clients', icon: 'Users' },
   ],
   superadmin: [
-    { title: 'Dashboard', url: '/dashboard', icon: 'calendar' },
-    { title: 'Barbearias', url: '/barbershops', icon: 'settings' },
-    { title: 'Relatórios Gerais', url: '/global-reports', icon: 'file-text' },
+    { title: 'Dashboard', url: '/dashboard', icon: 'Calendar' },
+    { title: 'Barbearias', url: '/barbershops', icon: 'Settings' },
+    { title: 'Relatórios Gerais', url: '/global-reports', icon: 'FileText' },
   ]
 };
 
 const iconMap = {
-  calendar,
-  users,
-  settings,
-  user,
-  'file-text': file-text,
+  Calendar,
+  Users,
+  Settings,
+  User,
+  FileText,
 };
 
 export function Sidebar() {
@@ -118,7 +118,7 @@ export function Sidebar() {
             onClick={logout}
             className="w-full justify-start gap-2 text-destructive hover:text-destructive"
           >
-            <log-out className="w-4 h-4" />
+            <LogOut className="w-4 h-4" />
             {!collapsed && "Sair"}
           </Button>
         </div>
